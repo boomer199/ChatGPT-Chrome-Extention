@@ -1,0 +1,24 @@
+  {
+    "manifest_version": 3,
+    "name":"Mobile ChatGPT" ,
+    "description": "Mobile ChatGPT is a convenient and easy-to-use Chrome extension that allows you to open a chat window and communicate with a language model directly from any webpage. Simply click on the extension icon to open the chat window and start chatting. No need to switch tabs or leave the webpage you're currently on. Mobile ChatGPT is perfect for quickly getting answers to your questions or having casual conversations while you browse the web.",
+    "version": "1.0",
+    "icons": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+      },
+    "content_scripts": [
+        {
+            "matches": ["https://*.openai.com/*"],
+            "js": ["popup.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+      }
+  }
